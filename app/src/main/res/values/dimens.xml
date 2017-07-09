@@ -6,4 +6,5 @@
     <dimen name="edittext_margin_createaccount">10dp</dimen>
     <dimen name="padding_vertical_createaccount">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="bottombar_height">70dp</dimen>
 </resources>

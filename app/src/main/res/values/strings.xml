@@ -11,5 +11,11 @@
     <string name="hint_confirm_password">Confirmar Contraseña</string>
     <string name="text_button_create_account">Crear Cuenta</string>
     <string name="toolbar_title_createaccount">Crear Cuenta</string>
-    <string name="title_activity_refe">REFEActivity</string>
+    <string name="tab_profile">Perfil</string>
+    <string name="tab_advisors">Asesores</string>
+    <string name="tab_request">Solicitud</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
