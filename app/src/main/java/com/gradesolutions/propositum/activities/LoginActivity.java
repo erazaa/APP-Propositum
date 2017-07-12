@@ -1,9 +1,11 @@
-package com.gradesolutions.propositum;
+package com.gradesolutions.propositum.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
+
+import com.gradesolutions.propositum.R;
 import com.gradesolutions.propositum.view.CreateAccountActivity;
 
 public class LoginActivity extends AppCompatActivity {

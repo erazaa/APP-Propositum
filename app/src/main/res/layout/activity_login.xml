@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.gradesolutions.propositum.LoginActivity"
+    tools:context="com.gradesolutions.propositum.activities.LoginActivity"
     android:background="@color/colorPrimary">
 
     <LinearLayout
