@@ -1,4 +1,4 @@
-package com.gradesolutions.propositum.view;
+package com.gradesolutions.propositum.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

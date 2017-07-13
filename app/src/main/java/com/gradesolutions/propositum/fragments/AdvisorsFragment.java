@@ -1,4 +1,4 @@
-package com.gradesolutions.propositum.view.fragment;
+package com.gradesolutions.propositum.fragments;
 
 
 import android.os.Bundle;

@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.gradesolutions.propositum.view.CreateAccountActivity">
+    tools:context="com.gradesolutions.propositum.activities.CreateAccountActivity">
 
     <include layout="@layout/actionbar_toolbar"/>
 

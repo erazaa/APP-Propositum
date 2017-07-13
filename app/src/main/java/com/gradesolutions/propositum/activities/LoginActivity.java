@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.view.View;
 
 import com.gradesolutions.propositum.R;
-import com.gradesolutions.propositum.view.CreateAccountActivity;
 
 public class LoginActivity extends AppCompatActivity {
 

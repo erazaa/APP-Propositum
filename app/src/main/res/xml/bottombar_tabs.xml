@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<tabs>
-    <tab
-        id="@+id/profile"
-        title="@string/tab_profile"
-        barColorWhenSelected="@color/colorPrimary"
-        icon="@drawable/ic_profile"
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/advisors"
+        android:title="@string/tab_advisors"
+
+        android:icon="@drawable/ic_advisors"
         />
+
     <tab
-        id="@+id/advisors"
-        title="@string/tab_advisors"
-        barColorWhenSelected="@color/colorPrimary"
-        icon="@drawable/ic_advisors"
+        android:id="@+id/profile"
+        android:title="@string/tab_profile"
+
+        android:icon="@drawable/ic_profile"
         />
+
     <tab
-        id="@+id/request"
-        title="@string/tab_request"
-        barColorWhenSelected="@color/colorPrimary"
-        icon="@drawable/ic_request"
-        />
-</tabs>
+        android:id="@+id/request"
+        android:title="@string/tab_request"
+
+        android:icon="@drawable/ic_request"/>
+
+</menu>

@@ -1,4 +1,4 @@
-package com.gradesolutions.propositum.view.fragment;
+package com.gradesolutions.propositum.fragments;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import com.gradesolutions.propositum.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class RequestFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
 
-    public RequestFragment() {
+    public ProfileFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class RequestFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_request, container, false);
+        return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 
 }
