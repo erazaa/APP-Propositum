@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="114dp"
+        android:layout_height="100dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        tools:layout_editor_absoluteY="41dp"
+        tools:layout_editor_absoluteX="39dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="163dp"
+        android:layout_height="48dp"
+        android:text="Button"
+        tools:layout_editor_absoluteY="77dp"
+        tools:layout_editor_absoluteX="188dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="Nivel Academico"
+        android:inputType="textMultiLine"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="262dp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="Especialidad"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="336dp" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Telefono"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="177dp" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Descripcion"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="478dp" />
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Correo"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="407dp" />
+
+</android.support.constraint.ConstraintLayout>
