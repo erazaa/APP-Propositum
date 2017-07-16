@@ -8,12 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.gradesolutions.propositum.PropoApp;
 import com.gradesolutions.propositum.R;
 import com.gradesolutions.propositum.adapters.AdvisorsAdapter;
 import com.gradesolutions.propositum.models.Advisor;
-
 import java.util.List;
 
 /**
@@ -39,7 +37,7 @@ public class AdvisorsFragment extends Fragment {
         advisors = PropoApp.getInstance().getAdvisors();
         advisorsAdapter = (new AdvisorsAdapter()).setAdvisors(advisors);
         advisorsLayoutManager = new LinearLayoutManager(view.getContext());
-        //recyclerview no sabe q tenemos los daots..hay q decirle
+
         advisorsRecyclerView.setAdapter(advisorsAdapter);
         advisorsRecyclerView.setLayoutManager(advisorsLayoutManager);
         return view;

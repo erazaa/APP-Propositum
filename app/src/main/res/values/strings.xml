@@ -11,8 +11,8 @@
     <string name="hint_confirm_password">Confirmar Contraseña</string>
     <string name="text_button_create_account">Crear Cuenta</string>
     <string name="toolbar_title_createaccount">Crear Cuenta</string>
-    <string name="tab_profile">Perfil</string>
     <string name="tab_advisors">Asesores</string>
+    <string name="tab_profile">Perfil</string>
     <string name="tab_request">Solicitud</string>
 
 

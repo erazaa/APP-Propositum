@@ -5,9 +5,8 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
-
-
 import com.gradesolutions.propositum.R;
 import com.gradesolutions.propositum.fragments.AdvisorsFragment;
 import com.gradesolutions.propositum.fragments.ProfileFragment;
@@ -25,18 +24,18 @@ public class ContainerActivity extends AppCompatActivity {
                             @Override
                             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                                 return navigateAccordingTo(item.getItemId());
+
                             }
                         });
         navigateAccordingTo(R.id.navigation_advisors);
 
     }
 
-
-
     private Fragment getFragmentFor(int id) {
         switch (id) {
-            case R.id.navigation_advisors: return new AdvisorsFragment();
+
             case R.id.navigation_profile: return new ProfileFragment();
+            case R.id.navigation_advisors: return new AdvisorsFragment();
             case R.id.navigation_request: return new RequestFragment();
         }
         return null;
