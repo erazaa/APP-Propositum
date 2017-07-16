@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gradesolutions.propositum">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".PropoApp"
@@ -33,7 +34,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.ContainerActivity" />
         </activity>
-
+        <activity android:name=".activities.CreateAdvisoriesActivity"></activity>
     </application>
 
 </manifest>
