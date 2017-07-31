@@ -1,56 +1,50 @@
 package com.gradesolutions.propositum.activities;
 
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
+import android.support.annotation.IdRes;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
 import com.gradesolutions.propositum.R;
 import com.gradesolutions.propositum.fragments.AdvisorsFragment;
 import com.gradesolutions.propositum.fragments.ProfileFragment;
 import com.gradesolutions.propositum.fragments.RequestFragment;
+import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.OnTabSelectListener;
 
 public class ContainerActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_container);
-        ((BottomNavigationView) findViewById(R.id.navigation))
-                .setOnNavigationItemSelectedListener(
-                        new BottomNavigationView.OnNavigationItemSelectedListener() {
-                            @Override
-                            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                                return navigateAccordingTo(item.getItemId());
 
-                            }
-                        });
-        navigateAccordingTo(R.id.navigation_advisors);
+        BottomBar bottomBar = (BottomBar) findViewById(R.id.bottombar);
+        bottomBar.setDefaultTab(R.id.advisors);
 
-    }
+        bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
+            @Override
+            public void onTabSelected(@IdRes int tabId) {
+                switch (tabId){
+                    case R.id.advisors:
+                        AdvisorsFragment advisorsFragment = new AdvisorsFragment();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, advisorsFragment)
+                                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                                .addToBackStack(null).commit();
+                        break;
+                    case R.id.profile:
+                        ProfileFragment profileFragment = new ProfileFragment();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, profileFragment)
+                                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                                .addToBackStack(null).commit();
+                        break;
+                    case R.id.request:
+                        RequestFragment requestFragment = new RequestFragment();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, requestFragment)
+                                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                                .addToBackStack(null).commit();
+                        break;
+                }
+            }
+        });
 
-    private Fragment getFragmentFor(int id) {
-        switch (id) {
-
-            case R.id.navigation_profile: return new ProfileFragment();
-            case R.id.navigation_advisors: return new AdvisorsFragment();
-            case R.id.navigation_request: return new RequestFragment();
-        }
-        return null;
-    }
-
-    private boolean navigateAccordingTo(int id) {
-        try {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.content, getFragmentFor(id))
-                    .commit();
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
     }
 }
