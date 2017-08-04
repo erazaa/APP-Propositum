@@ -10,7 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.gradesolutions.propositum.PropoApp;
+
 import com.gradesolutions.propositum.R;
 import com.gradesolutions.propositum.adapters.AdvisorsAdapter;
 import com.gradesolutions.propositum.models.Advisor;

@@ -30,4 +30,8 @@
     <string name="button">Crear Proyecto</string>
     <string name="descripcion">Descripcion</string>
     <string name="telefono">Telefono</string>
+    <string name="username_card">asesor1</string>
+    <string name="secondword_detail">Ejemplo de carrera y datos principales</string>
+    <string name="titleimagedetail">Magister Detalles</string>
+    <string name="informationadvisors">Persona con experiencia mas de 2 años de asesoria para titulaciones profesionales, seriedad y resposabilidad con horarios que se amueldan a los tuyos. Entre mis asesorias estan alumnos de la UPC y USIL</string>
 </resources>
