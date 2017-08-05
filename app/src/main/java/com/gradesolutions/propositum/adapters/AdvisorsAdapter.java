@@ -1,72 +1,88 @@
 package com.gradesolutions.propositum.adapters;
 
-import android.media.Image;
+import android.app.Activity;
+import android.content.Intent;
+
+import android.os.Build;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.RecyclerView;
+import android.transition.Explode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.ImageView;
 import android.widget.TextView;
-import com.androidnetworking.widget.ANImageView;
 import com.gradesolutions.propositum.R;
 import com.gradesolutions.propositum.models.Advisor;
+import com.gradesolutions.propositum.activities.AdvisorsDetailActivity;
+import com.squareup.picasso.Picasso;
+import java.util.ArrayList;
 
-import java.util.List;
-
-/**
- * Created by William on 13/07/2017.
- */
 
 public class AdvisorsAdapter extends RecyclerView.Adapter<AdvisorsAdapter.ViewHolder>{
-    private List<Advisor> advisors;
+    private ArrayList<Advisor> pictures;
+    private int resource;
+    private Activity activity;
 
-    @Override
-    public AdvisorsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ViewHolder( LayoutInflater
-                .from(parent.getContext())
-                .inflate(R.layout.content_advisors,parent,false));
-
+    public AdvisorsAdapter(ArrayList<Advisor> pictures, int resource, Activity activity) {
+        this.pictures = pictures;
+        this.resource = resource;
+        this.activity = activity;
     }
 
     @Override
-    public void onBindViewHolder(AdvisorsAdapter.ViewHolder holder, int position) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(resource, parent, false);
+        return new ViewHolder(view);
+    }
 
-        holder.logoANImageView.setErrorImageResId(R.mipmap.ic_launcher);
-        holder.logoANImageView.setDefaultImageResId(R.mipmap.ic_launcher);
-        holder.nameTextView.setText(advisors.get(position).getName());
-        holder.specialityTextView.setText(advisors.get(position).getSpeciality());
-        holder.descriptionTextView.setText(advisors.get(position).getDescription());
-        holder.priceTextView.setText(advisors.get(position).getPrice());
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        Advisor advisor = pictures.get(position);
+        holder.usernameCard.setText(advisor.getUserName());
+        holder.descriptionCard.setText(advisor.getDescription());
+        Picasso.with(activity).load(advisor.getPicture()).into(holder.pictureCard);
+
+        holder.pictureCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity, AdvisorsDetailActivity.class);
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+                    Explode explode = new Explode();
+                    explode.setDuration(1000);
+                    activity.getWindow().setExitTransition(explode);
+                    activity.startActivity(intent,
+                            ActivityOptionsCompat.makeSceneTransitionAnimation(activity, view, activity.getString(R.string.transitionname_advisors)).toBundle());
+
+                }else {
+                    activity.startActivity(intent);
+                }
+
+
+            }
+        });
+
     }
 
     @Override
     public int getItemCount() {
-        return advisors.size();
-    }
-    public List<Advisor> getAdvisors() {
-        return advisors;
+        return pictures.size();
     }
 
-    public AdvisorsAdapter setAdvisors(List<Advisor> advisors) {
-        this.advisors = advisors;
-        return this;
-    }
+    public class ViewHolder extends RecyclerView.ViewHolder{
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        ANImageView logoANImageView;
-        TextView nameTextView;
-        TextView specialityTextView;
-        TextView descriptionTextView;
-        TextView priceTextView;
-        TextView currencyTextView;
-         ViewHolder(View itemView) {
+        private ImageView pictureCard;
+        private TextView usernameCard;
+        private TextView descriptionCard;
+
+
+        public ViewHolder(View itemView) {
             super(itemView);
-             logoANImageView = (ANImageView) itemView.findViewById(R.id.logoANImageView);
-             nameTextView    = (TextView) itemView.findViewById(R.id.nameTextView);
-             specialityTextView = (TextView) itemView.findViewById(R.id.specialityTextView);
-             descriptionTextView = (TextView) itemView.findViewById(R.id.descriptionTextView);
-             priceTextView    = (TextView) itemView.findViewById(R.id.priceTextView);
-             currencyTextView = (TextView) itemView.findViewById(R.id.currencyTextView);
+
+            pictureCard     = (ImageView) itemView.findViewById(R.id.pictureCard);
+            usernameCard    = (TextView) itemView.findViewById(R.id.userNameCard);
+            descriptionCard        = (TextView) itemView.findViewById(R.id.descriptionCard);
 
         }
     }

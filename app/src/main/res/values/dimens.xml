@@ -17,4 +17,8 @@
     <dimen name="marginleft_secondword">7dp</dimen>
     <dimen name="padding_horizontal_textconteninformation">35dp</dimen>
     <dimen name="padding_horizontal_textcontendetail">35dp</dimen>
+    <dimen name="cornerradius_cardview">4dp</dimen>
+    <dimen name="height_cardview">200dp</dimen>
+    <dimen name="textsize_username_card">25sp</dimen>
+    <dimen name="firstword_textsize_card">15sp</dimen>
 </resources>

@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".PropoApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -35,6 +34,9 @@
                 android:value=".activities.ContainerActivity" />
         </activity>
         <activity android:name=".activities.CreateAdvisoriesActivity"></activity>
+        <activity android:name=".activities.AdvisorsDetailActivity"
+            android:parentActivityName=".activities.ContainerActivity"/>
+
     </application>
 
 </manifest>
